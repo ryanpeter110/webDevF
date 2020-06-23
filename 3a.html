@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Prototype</h2>
+<script type="text/javascript">
+function calculator(num){
+    this.n=num;
+}
+calculator.prototype.add=function(num){
+    this.n=this.n+num;
+    return this;
+}
+calculator.prototype.sub=function(num){
+    this.n=this.n-num;
+    return this;
+}
+calculator.prototype.answer=function(){
+    document.write(this.n);
+}
+var a= new calculator(10).add(3).add(3).sub(10).answer()
+</script>
+</body>
+</html> 

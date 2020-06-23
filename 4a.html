@@ -1,0 +1,34 @@
+<html>
+<script src="angular/angular.min.js"></script>
+<body ng-app="myapp">
+	<div ng-controller="mycontroller">
+   	 
+    	<div>    
+    	<h3>Name: {{namee}}!</h3>
+    	<h3>Address: {{address}}!</h3>           	 
+    	<h3>Initial Company: {{::company}}!</h3>
+    	</div>
+   	 
+    	Name: <span ng-bind="namee"></span><br>
+    	Address:<span ng-bind="address"></span><br>
+	New Company: {{::company}}!<br>
+    	<button  ng-click="change()">CHANGE</button>
+   	 
+	</div>
+    
+	<script type="text/javascript">
+var myapp=angular.module("myapp",[]);
+myapp.controller("mycontroller",function($scope)
+{
+	$scope.namee=prompt("Enter Name");
+	$scope.address=prompt("Enter Address");
+	$scope.company=prompt("Enter Company");
+$scope.change=function(){
+	$scope.namee="Name Change";
+	$scope.address="Address Change";
+	$scope.company="Company Change";
+    	};
+});
+</script>
+</body>
+</html>
